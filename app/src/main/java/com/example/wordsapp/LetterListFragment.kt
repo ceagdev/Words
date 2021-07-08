@@ -57,7 +57,7 @@ class LetterListFragment : Fragment() {
     }
 
 
-    // Mothdos complementario
+    // Complementary Methods
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_switch_layout -> {
