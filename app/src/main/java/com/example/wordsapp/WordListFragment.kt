@@ -28,14 +28,15 @@ class WordListFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
 
-    // Retrieve the LETTER from the Intent extras
-    // intent.extras.getString returns String? (String or null)
-    // so toString() guarantees that the value will be a String
-    val letterId = activity?.intent?.extras?.getString(LETTER).toString()
+    // Retrieve the LETTER from the Args
+    private lateinit var letterId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+        arguments?.let {
+            letterId = it.getString(LETTER).toString()
+        }
     }
 
     override fun onCreateView(
